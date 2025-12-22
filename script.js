@@ -9,3 +9,10 @@ function getComputerChoice(){
 
 const compPick=getComputerChoice();
 console.log(compPick);
+
+function getHumanChoice(){
+ return window.prompt('Take your guess');
+};
+
+const humanPick=getHumanChoice();
+console.log(humanPick);
