@@ -17,8 +17,8 @@ function getHumanChoice(){
 const humanPick=getHumanChoice();
 console.log(humanPick);
 
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 let result;
 
 function playRound(humanChoice, computerChoice){
@@ -62,10 +62,20 @@ function playRound(humanChoice, computerChoice){
   }
  }
  else{
-  console.log('error')
+  return console.log(`error, you've typed incorrect value. Please try again`);
  }
 
- console.log(`You picked ${humanChoice}, computer picked ${compPick}. You ${result}`);
+ switch(result){
+  case 'win':
+    humanScore++;
+    break;
+
+  case 'loose':
+    computerScore++;
+    break;
+ }
+
+ console.log(`You picked ${humanChoice}, computer picked ${compPick}. You ${result}. Score: You ${humanScore} | Computer ${computerScore}`);
 }
 
 playRound(humanPick, compPick);
