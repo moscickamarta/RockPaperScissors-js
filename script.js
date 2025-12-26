@@ -19,6 +19,7 @@ function playRound(){
 
 const computerChoice=getComputerChoice();
 
+
 const humanChoice=getHumanChoice();
 
  if(humanChoice.toLowerCase()=='scissors'){
@@ -30,7 +31,7 @@ const humanChoice=getHumanChoice();
       result='win';
       break;
     case 'rock':
-      result='loose';
+      result='lose';
       break;
   }
  }
@@ -40,7 +41,7 @@ const humanChoice=getHumanChoice();
       result='win';
       break;
     case 'paper':
-      result='loose';
+      result='lose';
       break;
     case 'rock':
       result='tie';
@@ -50,7 +51,7 @@ const humanChoice=getHumanChoice();
  else if (humanChoice.toLowerCase()=='paper'){
   switch(computerChoice){
     case 'scissors':
-      result='loose';
+      result='lose';
       break;
     case 'paper':
       result='tie';
@@ -69,7 +70,7 @@ const humanChoice=getHumanChoice();
     humanScore++;
     break;
 
-  case 'loose':
+  case 'lose':
     computerScore++;
     break;
  }
