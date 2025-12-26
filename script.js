@@ -7,21 +7,20 @@ function getComputerChoice(){
   else return 'scissors';
 }
 
-const compPick=getComputerChoice();
-console.log(compPick);
-
 function getHumanChoice(){
  return window.prompt('Take your guess');
 };
-
-const humanPick=getHumanChoice();
-console.log(humanPick);
 
 let humanScore = 0;
 let computerScore = 0;
 let result;
 
-function playRound(humanChoice, computerChoice){
+function playRound(){
+
+const computerChoice=getComputerChoice();
+
+const humanChoice=getHumanChoice();
+
  if(humanChoice.toLowerCase()=='scissors'){
   switch(computerChoice){
     case 'scissors':
@@ -75,7 +74,15 @@ function playRound(humanChoice, computerChoice){
     break;
  }
 
- console.log(`You picked ${humanChoice}, computer picked ${compPick}. You ${result}. Score: You ${humanScore} | Computer ${computerScore}`);
+ console.log(`You picked ${humanChoice}, computer picked ${computerChoice}. You ${result}. Score: You ${humanScore} | Computer ${computerScore}`);
 }
 
-playRound(humanPick, compPick);
+function playGame(){
+  for(let i=0; i<5; i++)
+  {
+    playRound();
+  }
+}
+
+playGame();
+
